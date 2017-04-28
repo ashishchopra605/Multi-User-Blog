@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% for p in posts %}
+
+<div class="container">
+	<div class="panel panel-default post">
+		<div class="panel-heading post-heading">
+			<div class="post-title">
+
+				{{p.subject}}
+			</div>
+			<div class="post-date">
+				{{p.created.strftime("%b %d, %Y")}}
+			</div>
+		</div>
+		<div class="panel-body panel-style">
+			<div class="post-content">
+				{{p.content.replace('\n', '<br>') | safe}}
+			</div>
+		</div>
+		<div class="panel-footer footer-style">
+			<div>User: {{p.user_posted }}</div>
+			<div>
+
+				<div class="display">
+
+					<div class="element-margin">
+						<form method="post" class="form-horizontal" action="like/{{p.key().id()}}">
+							<button type="submit" class="btn btn-default btn-primary btn-sm">Like</button>
+						</form>
+					</div>
+
+					<div class="element-margin">
+						<form method="get" name="postid" class="form-horizontal"   action="/postcomment/{{ p.key().id() }}">
+							<button type="submit" class="btn btn-default btn-primary btn-sm" >comment</button>
+						</form>
+					</div>
+
+				</div>
+			</div>
+			<div>Likes: {{p.likes}}</div>
+			<div>comments:</div>
+			<div>
+
+				{% for c in comment %}
+
+				{% if c.comment_id == p.key().id() %}
+
+
+				<div class="display">
+					<div name="content" class="element-margin" value="{{c.content.replace('\n', '<br>')}}">{{c.content.replace('\n', '<br>')}}</div>
+					<form  class="element-margin" method="post" action="/deletecomment/{{c.key().id()}}">
+						<button  type="submit" class="btn btn-default btn-primary btn-sm">Delete</button>
+					</form>
+					<form method="get" class="element-margin" action="/editcomment/{{p.key().id()}}/{{c.key().id()}}">
+						<button  type="submit" class="btn btn-default btn-primary btn-sm">edit</button>
+					</form>
+				</div>
+				{% endif %}
+
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
+
+<br><br>
+
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="panel panel-default panel-style">
+	<div class="panel-heading heading-color">Signup</div>
+	<div class="panel-body">
+		<form method="post" class="form-horizontal">
+			<div class="form-group">
+				<label class="control-label col-sm-2">Username</label>
+
+
+				{% if error_username %}
+				<div class="col-sm-10 has-error">
+					<input type="text"  class="form-control" name="username" value="{{username}}">
+					<div class="error">
+						{{error_username}}
+					</div>
+				</div>
+				{% else %}
+				<div class="col-sm-10">
+					<input type="text" class="form-control input-style" name="username" value="{{username}}">
+				</div>
+				{% endif %}
+
+
+
+			</div>
+
+			<div class="form-group">
+				<label class="control-label col-sm-2">Password</label>
+				{% if error_password %}
+				<div class="col-sm-10 has-error">
+					<input type="password" class="form-control" name="password" value="">
+					<div class="error">
+						{{error_password}}
+					</div>
+				</div>
+				{% else %}
+				<div class="col-sm-10">
+					<input type="password" class="form-control" name="password" value="">
+				</div>
+				{% endif %}
+			</div>
+
+			<div class="form-group">
+				<label class="control-label col-sm-2">Verify Password</label>
+				{% if error_verify %}
+				<div class="col-sm-10 has-error">
+					<input type="password" class="form-control" name="verify" value="">
+					<div class="error">
+						{{error_verify}}
+					</div>
+				</div>
+				{% else %}
+				<div class="col-sm-10">
+					<input type="password" class="form-control" name="verify" value="">
+				</div>
+				{% endif %}
+			</div>
+
+			<div class="form-group">
+				<label class="control-label col-sm-2">Email (optional)</label>
+				{% if error_email %}
+				<div class="col-sm-10 has-error">
+					<input type="text"  class="form-control input-style" name="email" value="{{email}}">
+					<div class="error">
+						{{error_email}}
+					</div>
+				</div>
+				{% else %}
+				<div class="col-sm-10">
+					<input type="text"  class="form-control input-style" name="email" value="{{email}}">
+				</div>
+				{% endif %}
+			</div>
+
+			<div class="panel-footer footer-color">
+				<input type="submit" class="btn btn-default btn-primary">
+			</div>
+		</form>
+	</div>
+</div>
+</div>
+{% endblock %}

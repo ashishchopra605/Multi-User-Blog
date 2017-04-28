@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style type="text/css">
+	th,td{
+		padding: 5px;
+		text-align: left;
+	}
+</style>
+<h3>Welcome {{user.name}}!</h3>
+<div>
+	<h3 class="content-style">Add a New Post<a type="button" class="btn btn-default navbar-btn btn-primary" href="/blog/newpost">NewPost</a></h3>
+
+</div>
+
+<table class="head">
+	<tr>
+		<th>subject</th>
+		<th>created</th>
+		<th>last modified</th>
+		<th>edit</th>
+		<th>delete</th>
+	</tr>
+	{% for i in posts%}
+
+	<tr>
+		<td>{{i.subject}}</td>
+		<td>{{i.created}}</td>
+		<td>{{i.last_modified}}</td>
+		<form method="get" action="/editpost/{{i.key().id()}}">
+			<td><button type="submit" class="btn btn-default btn-primary btn-sm" >Edit</button></td>
+		</form>
+		<form method="post" action="/deletepost/{{i.key().id()}}">
+			<td><button type="submit" class="btn btn-default btn-primary btn-sm">Delete</button></td>
+		</form>
+
+	</tr>
+	{% endfor %}
+</table>
+
+{% endblock %}

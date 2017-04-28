@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+	<div class="panel panel-default post">
+		<div class="post-heading panel-heading">
+			<div class="post-title">
+				{{p.subject}}
+			</div>
+			<div class="post-date">
+				{{p.created.strftime("%b %d, %Y")}}
+			</div>
+		</div>
+		<div class="panel-body panel-style">
+			<div class="post-content">
+				{{p.content.replace('\n', '<br>') | safe}}
+			</div>
+		</div>
+		<div class="panel-footer footer-style">
+			<form method="post" action="/editcomment/{{p.key().id()}}/{{comment.key().id()}}" class="form-style">
+				<input type="text" name="content" value="{{comment.content.replace('\n', '<br>')}}"></textarea><br>
+				<button type="submit" class="btn btn-default btn-primary btn-md btnstyle">Edit</button>
+				<a type="submit" class="btn btn-default btn-primary btn-md" href="/blog">Cancel</a>
+			</form>
+		</div>
+	</div>
+</div>
+<br>
+<div>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link type="text/css" rel="stylesheet" href="/css/main.css" />
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<title>CS 253 Blog</title>
+</head>
+
+<body class="body-color">
+	<div>
+		{% if user %}
+		<nav class="navbar navbar-default color">
+			<div class="btn-margin">
+				<a type="button" class="btn btn-default navbar-btn navbar-right btn-primary" href="/logout">Logout</a>
+				<a type="button" class="btn btn-default navbar-btn navbar-right btn-primary" href="/blog/user">{{user.name}}</a>
+			</div>
+		</nav>
+		{% else %}
+		<nav class="navbar navbar-default color">
+			<div class="btn-margin">
+				<a type="button" class="btn btn-default navbar-btn navbar-right btn-primary" href="/signup">Sign up</a>
+				<a type="button" class="btn btn-default navbar-btn navbar-right btn-primary" href="/login">Sign in</a>
+			</div>
+		</nav>
+		{% endif %}
+	</div>
+	<a href="/blog" class="main-title">
+		CS 253 Blog
+	</a>
+	<div id="content" class="blog-content">
+		{% block content %}
+		{% endblock %}
+	</div>
+
+</body>
+
+</html>

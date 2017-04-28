@@ -1,0 +1,22 @@
+<div class="container">
+	<div class="panel panel-default post">
+		<div class="panel-heading post-heading">
+			<div class="post-title">
+				{{p.subject}}
+			</div>
+			<div class="post-date">
+				{{p.created.strftime("%b %d, %Y")}}
+			</div>
+		</div>
+		<div class="panel-body panel-style">
+			<div class="post-content">
+				{{p._render_text | safe}}
+			</div>
+		</div>
+		<div class="panel-footer footer-style">
+			<div>User: {{p.user_posted }}</div>
+
+		</div>
+	</div>
+</div>
+</div>

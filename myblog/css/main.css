@@ -1,0 +1,167 @@
+body {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	color: #333;
+	max-width: 100%
+}
+
+.body-color {
+	background-color: #e5e8e8;
+}
+
+.blog-content {
+	margin: auto;
+	width: 90%;
+	padding: 10px;
+}
+
+h2 {
+	font-size: 24px;
+	font-weight: bold;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.error {
+	color: red;
+}
+
+label {
+	display: block;
+	font-size: 20px;
+}
+
+label + label {
+	margin-top: 20px;
+}
+
+textarea {
+	width: 500px;
+	height: 400px;
+	font-size: 17px;
+	font-family: monospace;
+}
+
+.main-title {
+	display: block;
+	color: #222;
+	font-size: 40px;
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 30px;
+	text-decoration: none;
+}
+
+div.post {
+	margin: auto;
+	width: 90%;
+	box-shadow: 10px 10px 5px;
+}
+
+.post + .post {
+	margin-top: 15px;
+}
+
+.post-date {
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+	color: #999;
+
+}
+
+.post-content {
+	margin-top: 5px;
+}
+
+.post-heading {
+	position: relative;
+	background-color: #7b7d7d !important;
+	margin: auto;
+	padding: 10px;
+
+}
+
+.post-title {
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.heading-color {
+	background-color: #1abc9c !important;
+}
+
+input[type=text] {
+	width: 650px;
+	font-size: 20px;
+	padding: 2px;
+	font-family: monospace;
+}
+
+input[type=submit] {
+	font-size: 16px;
+	margin-left: 175px;
+}
+
+.btn {
+	margin-left: 10px;
+}
+
+div.panel-style {
+	background-color: #e5e8e8;
+	margin: auto;
+	padding: 10px;
+}
+div.panel-body-style {
+	background-color: #e5e8e8;
+	margin: auto;
+	padding: 10px;
+	text-align: center;
+}
+div.panel-style {
+	background-color: #e5e8e8;
+}
+div.footer-color {
+	background-color: #e5e8e8;
+}
+div.footer-style {
+	background-color: #e5e8e8 !important;
+	margin: auto;
+	padding: 10px;
+}
+
+.element-margin {
+	margin: 10px;
+}
+.display {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+form.form-style {
+	width: 90%;
+	margin: 20px;
+	padding: 10px;
+	text-align: center;
+}
+.input-style {
+
+	width: 100% !important;
+}
+
+table.head {
+	width:100%;
+	border: 1px solid;
+}
+
+.content-style {
+	text-align: center;
+}
+
+.btn-margin {
+	margin-right: 30px;
+}
+
+nav.color {
+	background-color: #7b7d7d;
+}

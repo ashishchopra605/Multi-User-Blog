@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+	<div class="panel panel-default post">
+		<div class="panel-heading post-heading">
+			<div class="post-title">
+				<h2>edit post</h2>
+			</div>
+		</div>
+		<div class="panel-body panel-body-style">
+			<div class="post-content">
+				<form method="post">
+					<label>
+						<div>subject</div>
+						<input type="text" name="subject" value="{{subject}}">
+					</label>
+
+					<label>
+						<div>blog</div>
+						<textarea name="content">{{content}}</textarea>
+					</label>
+					<br>
+					<button type="submit" class="btn btn-default btn-primary btn-md">Edit</button>
+					<a type="submit" class="btn btn-default btn-primary btn-md" href="/blog/user">Cancel</a>
+				</form>
+			</div>
+		</div>
+		<div class="panel-footer footer-style">
+			<div class="error">{{error}}</div>
+		</div>
+	</div>
+</div>
+<br>
+{% endblock %}
