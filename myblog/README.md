@@ -34,5 +34,5 @@
 <ul>
 <li>Install Python  from <a href="https://www.python.org/downloads/">here</a></li>
 <li>Install Google App Engine SDK.</li>
-<li>you can use dev_appserver.py to run a copy of your app on your own computer, and access it at http://localhost:8080/.</li>
+<li>you can use dev_appserver.py to run app on your own computer, and access it at http://localhost:8080/.</li>
 </ul>
