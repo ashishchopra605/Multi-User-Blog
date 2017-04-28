@@ -111,6 +111,7 @@ div.panel-style {
 	background-color: #e5e8e8;
 	margin: auto;
 	padding: 10px;
+	box-shadow: 10px 10px 5px;
 }
 div.panel-body-style {
 	background-color: #e5e8e8;
